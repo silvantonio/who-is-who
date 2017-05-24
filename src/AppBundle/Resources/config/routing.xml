@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="api_ping" path="/ping" methods="GET">
+        <default key="_controller">AppBundle:Default:ping</default>
+    </route>
+
+
+    <route id="api_role_create" path="/website" methods="POST">
+        <default key="_controller">AppBundle:Website:create</default>
+    </route>
+    <route id="api_role_list" path="/website" methods="GET">
+        <default key="_controller">AppBundle:Website:cget</default>
+    </route>
+    <route id="api_role_edit" path="/website/{id}" methods="PUT">
+        <default key="_controller">AppBundle:Website:edit</default>
+    </route>
+    <route id="api_role_show" path="/website/{id}" methods="GET">
+        <default key="_controller">AppBundle:Website:show</default>
+    </route>
+    <route id="api_role_delete" path="/website/{id}" methods="DELETE">
+        <default key="_controller">AppBundle:Website:delete</default>
+    </route>
+
+</routes>

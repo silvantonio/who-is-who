@@ -1,0 +1,26 @@
+version: '2.0'
+services:
+  web:
+    image: nginx:alpine
+    container_name: whoiswho-service-nginx
+    ports:
+        - "8080:80"
+    volumes:
+        - ./:/var/www/html/
+        - ./docker-dev/whoiswho-service.conf:/etc/nginx/conf.d/whoiswho-service.conf
+    links:
+        - php
+  php:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      container_name: whoiswho-service-php
+      volumes:
+        - ./:/var/www/html/
+      environment:
+        SERVICE_LOCATOR_HOST: 1
+  neo4j:
+      image: neo4j:latest
+      ports:
+          - 7474:7474
+          - 7687:7687
