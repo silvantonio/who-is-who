@@ -2,7 +2,7 @@ version: '2.0'
 services:
   web:
     image: nginx:alpine
-    container_name: whoiswho-service-nginx
+    container_name: who-is-who-nginx-service
     ports:
         - "8080:80"
     volumes:
@@ -14,7 +14,7 @@ services:
       build:
         context: .
         dockerfile: Dockerfile
-      container_name: whoiswho-service-php
+      container_name: who-is-who-php-service
       volumes:
         - ./:/var/www/html/
       environment:

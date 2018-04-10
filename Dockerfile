@@ -9,11 +9,13 @@ RUN apt update \
     && apt install -y zlib1g-dev \
     && docker-php-ext-install bcmath \
     && docker-php-ext-install zip \
-    && rm -R -f /var/www/html/var/cache \
-    && /usr/local/bin/php -r "readfile('http://getcomposer.org/installer');" | \
-        /usr/local/bin/php -- --install-dir=/usr/bin/ --filename=composer \
-    && /usr/local/bin/php /usr/bin/composer install --working-dir=/var/www/html \
-    && chown -R www-data:www-data /var/www/html/var \
+    && rm -R -f /var/www/html/var/cache
+
+RUN /usr/local/bin/php -r "readfile('http://getcomposer.org/installer');" | \
+    /usr/local/bin/php -- --install-dir=/usr/bin/ --filename=composer \
+    && /usr/local/bin/php /usr/bin/composer install --working-dir=/var/www/html
+
+RUN chown -R www-data:www-data /var/www/html/var \
     && chmod 777 -R /var/www/html/var
 
 WORKDIR /var/www/html/web
