@@ -3,8 +3,6 @@
 namespace AppBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use GraphAware\Neo4j\Client\ClientBuilder;
@@ -89,24 +87,4 @@ class WebsiteController extends FOSRestController
                 'error' => null
             ]);
     }
-
-//    public function getAction($id)
-//    {
-//
-//    }
-//
-//    public function searchAction(Request $request)
-//    {
-//
-//    }
-//
-//    public function deleteAction($id)
-//    {
-//MATCH (n) DETACH DELETE n
-//    }
-//
-//    public function updateAction()
-//    {
-//
-//    }
 }

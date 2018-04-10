@@ -9,19 +9,19 @@
     </route>
 
 
-    <route id="api_role_create" path="/website" methods="POST">
+    <route id="api_role_create" path="/websites" methods="POST">
         <default key="_controller">AppBundle:Website:create</default>
     </route>
-    <route id="api_role_list" path="/website" methods="GET">
+    <route id="api_role_list" path="/websites" methods="GET">
         <default key="_controller">AppBundle:Website:cget</default>
     </route>
-    <route id="api_role_edit" path="/website/{id}" methods="PUT">
+    <route id="api_role_edit" path="/websites/{id}" methods="PUT">
         <default key="_controller">AppBundle:Website:edit</default>
     </route>
-    <route id="api_role_show" path="/website/{id}" methods="GET">
+    <route id="api_role_show" path="/websites/{id}" methods="GET">
         <default key="_controller">AppBundle:Website:show</default>
     </route>
-    <route id="api_role_delete" path="/website/{id}" methods="DELETE">
+    <route id="api_role_delete" path="/websites/{id}" methods="DELETE">
         <default key="_controller">AppBundle:Website:delete</default>
     </route>
 
